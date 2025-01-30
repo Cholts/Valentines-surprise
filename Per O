@@ -10,47 +10,73 @@
             text-align: center;
             font-family: Arial, sans-serif;
             color: white;
+            margin: 0;
+            padding: 0;
         }
-        h1 {
-            font-size: 3em;
+        nav {
+            background: rgba(255, 20, 147, 0.8);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
         }
         .countdown {
             font-size: 2em;
-            margin-top: 20px;
         }
         .quiz {
-            margin-top: 30px;
             font-size: 1.5em;
         }
-        .creator {
-            margin-top: 30px;
-        }
-        img {
+        .creator img {
             width: 300px;
             border-radius: 15px;
             margin-top: 10px;
         }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
-    <h1>Happy Valentine's Day, My Darlin Dearest! 💖</h1>
-    <h2>Countdown to Our 2-Year Anniversary</h2>
-    <div class="countdown" id="countdown"></div>
+    <nav>
+        <a href="#countdown">Countdown</a>
+        <a href="#quiz">Love Quiz</a>
+        <a href="#creator">Meet the Creator</a>
+    </nav>
+
+    <section id="countdown">
+        <h1>Happy Valentine's Day, My Darlin dearest! 💖</h1>
+        <h2>Countdown to Our 2-Year Anniversary</h2>
+        <div class="countdown" id="countdown-timer"></div>
+    </section>
     
-    <h2>Love Quiz</h2>
-    <div class="quiz">
-        <p>When is my birthday?</p>
-        <p>April 23, 2003</p>
-        <p>What’s your special nickname?</p>
-        <p>Darlin</p>
-        <p>What piece of clothing made me fall for you?</p>
-        <p>Jeans</p>
-    </div>
+    <section id="quiz">
+        <h2>Love Quiz</h2>
+        <div class="quiz">
+            <p>When is my birthday?</p>
+            <p>April 23, 2003</p>
+            <p>What’s your special nickname?</p>
+            <p>Darlin</p>
+            <p>What piece of clothing made me fall for you?</p>
+            <p>Jeans</p>
+        </div>
+    </section>
     
-    <div class="creator">
+    <section id="creator">
         <h2>Meet the Creator</h2>
         <img src="creator.jpg" alt="Meet the Creator">
-    </div>
+    </section>
     
     <script>
         function countdownTimer() {
@@ -59,7 +85,7 @@
             const distance = anniversaryDate - now;
             
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("countdown").innerText = `${days} days left!`;
+            document.getElementById("countdown-timer").innerText = `${days} days left!`;
         }
         setInterval(countdownTimer, 1000);
     </script>
