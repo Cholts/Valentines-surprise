@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        .countdown {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .quiz {
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+        .creator {
+            margin-top: 30px;
+        }
+        img {
+            width: 300px;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day, My Darlin Dearest! 💖</h1>
+    <h2>Countdown to Our 2-Year Anniversary</h2>
+    <div class="countdown" id="countdown"></div>
+    
+    <h2>Love Quiz</h2>
+    <div class="quiz">
+        <p>When is my birthday?</p>
+        <p>April 23, 2003</p>
+        <p>What’s your special nickname?</p>
+        <p>Darlin</p>
+        <p>What piece of clothing made me fall for you?</p>
+        <p>Jeans</p>
+    </div>
+    
+    <div class="creator">
+        <h2>Meet the Creator</h2>
+        <img src="creator.jpg" alt="Meet the Creator">
+    </div>
+    
+    <script>
+        function countdownTimer() {
+            const anniversaryDate = new Date("June 9, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = anniversaryDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerText = `${days} days left!`;
+        }
+        setInterval(countdownTimer, 1000);
+    </script>
+</body>
+</html>
